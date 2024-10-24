@@ -81,7 +81,7 @@ void dvfsrc_opp_level_mapping(void)
 				"k62v1_64_bsp_ctgc", 17))
 		is_vcore_ct = is_mini_sqc = 1;
 
-	pr_info("flavor check: %s, is_vcore_ct: %d, is_mini_sqc: %d\n",
+	pr_debug("flavor check: %s, is_vcore_ct: %d, is_mini_sqc: %d\n",
 			CONFIG_ARCH_MTK_PROJECT,
 			is_vcore_ct, is_mini_sqc);
 
@@ -134,10 +134,10 @@ void dvfsrc_opp_level_mapping(void)
 
 	}
 
-	pr_info("flavor check: %s, is_vcore_ct: %d, is_mini_sqc: %d\n",
+	pr_debug("flavor check: %s, is_vcore_ct: %d, is_mini_sqc: %d\n",
 			CONFIG_ARCH_MTK_PROJECT,
 			is_vcore_ct, is_mini_sqc);
-	pr_info("%s: FINAL vcore_opp_uv: %d, %d, %d, %d\n",
+	pr_debug("%s: FINAL vcore_opp_uv: %d, %d, %d, %d\n",
 			__func__,
 			vcore_opp_0_uv,
 			vcore_opp_1_uv,
