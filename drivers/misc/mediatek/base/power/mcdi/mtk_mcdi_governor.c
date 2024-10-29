@@ -587,8 +587,8 @@ int mcdi_governor_select(int cpu, int cluster_idx)
 
 	mcdi_sta->valid         = true;
 	mcdi_sta->enter_time_us = idle_get_current_time_us();
-	mcdi_sta->predict_us = 1 ;
-	mcdi_sta->next_timer_us = 1 ;
+	mcdi_sta->predict_us;
+	mcdi_sta->next_timer_us;
 
 	if (last_core_in_mcusys && last_core_token == -1) {
 		last_core_token      = cpu;
