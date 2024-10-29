@@ -6,7 +6,7 @@ export KBUILD_BUILD_USER="ipin22"
 export PATH="$(pwd)/clang/bin:$PATH"
 export LOCALVERSION="-lineage"
 # build kernel
-make -j$(nproc --all) O=out ARCH=arm64 ipin_defconfig
+make -j$(nproc --all) O=out ARCH=arm64 oppo6765_19451_defconfig
 make -j16 ARCH=arm64 O=out \
                       HOSTCC="ccache clang" \
                       HOSTCXX="ccache clang++" \
