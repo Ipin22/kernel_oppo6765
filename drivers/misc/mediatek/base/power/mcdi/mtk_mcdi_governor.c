@@ -284,8 +284,6 @@ static bool remain_sleep_residency_allowable(unsigned int cpu_mask, int state)
 {
 	int i;
 	unsigned long long curr_time_us;
-	unsigned long long curr_predict_us
-	unsigned long long curr_timer_us
 	unsigned long long remain_sleep_us;
 	unsigned int target_residency;
 	unsigned long flags;
@@ -297,8 +295,6 @@ static bool remain_sleep_residency_allowable(unsigned int cpu_mask, int state)
 	mcdi_cluster.chk_res_cnt++;
 
 	curr_time_us = idle_get_current_time_us();
-	curr_predict_us = get_menu_predict_us();
-	curr_timer_us = get_menu_next_timer_us();
 
 	spin_lock_irqsave(&mcdi_cluster_spin_lock, flags);
 
@@ -589,8 +585,8 @@ int mcdi_governor_select(int cpu, int cluster_idx)
 
 	mcdi_sta->valid         = true;
 	mcdi_sta->enter_time_us = idle_get_current_time_us();
-	mcdi_sta->predict_us    = get_menu_predict_us();
-	mcdi_sta->next_timer_us = get_menu_next_timer_us();
+	mcdi_sta->predict_us    = idle_get_current_time_us();
+	mcdi_sta->next_timer_us = idle_get_current_time_us();
 
 	if (last_core_in_mcusys && last_core_token == -1) {
 		last_core_token      = cpu;
