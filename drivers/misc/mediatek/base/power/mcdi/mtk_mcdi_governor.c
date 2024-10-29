@@ -544,6 +544,8 @@ int mcdi_governor_select(int cpu, int cluster_idx)
 	struct mcdi_status *mcdi_sta = NULL;
 	struct cpuidle_driver *tbl = mcdi_state_tbl_get(cpu);
 	int latency_req = pm_qos_request(PM_QOS_CPU_DMA_LATENCY);
+	unsigned int get_menu_predict_us(void);
+	unsigned int get_menu_next_timer_us(void);
 
 	if (!is_mcdi_working())
 		return MCDI_STATE_WFI;
@@ -585,8 +587,8 @@ int mcdi_governor_select(int cpu, int cluster_idx)
 
 	mcdi_sta->valid         = true;
 	mcdi_sta->enter_time_us = idle_get_current_time_us();
-	mcdi_sta->predict_us;
-	mcdi_sta->next_timer_us;
+	mcdi_sta->predict_us = 1 ;
+	mcdi_sta->next_timer_us = 1 ;
 
 	if (last_core_in_mcusys && last_core_token == -1) {
 		last_core_token      = cpu;
