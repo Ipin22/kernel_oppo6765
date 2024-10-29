@@ -15,15 +15,15 @@
 import sys,os
 import re
 import string
-import configparser
+import ConfigParser
 import xml.dom.minidom
 
-#from . ChipObj import ChipObj
+import ChipObj
 from data.PowerData import PowerData
 from utility.util import log
 from utility.util import LogLevel
 from utility.util import sorted_key
-from . ModuleObj import ModuleObj
+from ModuleObj import ModuleObj
 
 class PowerObj(ModuleObj):
     def __init__(self):
@@ -31,7 +31,7 @@ class PowerObj(ModuleObj):
         self.__list = {}
 
     def getCfgInfo(self):
-        cp = configparser.ConfigParser(allow_no_value=True)
+        cp = ConfigParser.ConfigParser(allow_no_value=True)
         cp.read(ModuleObj.get_figPath())
 
         self.__list = cp.options('POWER')
