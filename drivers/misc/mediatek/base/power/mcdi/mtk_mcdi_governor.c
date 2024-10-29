@@ -284,6 +284,8 @@ static bool remain_sleep_residency_allowable(unsigned int cpu_mask, int state)
 {
 	int i;
 	unsigned long long curr_time_us;
+	unsigned long long curr_predict_us
+	unsigned long long curr_timer_us
 	unsigned long long remain_sleep_us;
 	unsigned int target_residency;
 	unsigned long flags;
