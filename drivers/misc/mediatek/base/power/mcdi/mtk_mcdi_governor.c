@@ -295,6 +295,8 @@ static bool remain_sleep_residency_allowable(unsigned int cpu_mask, int state)
 	mcdi_cluster.chk_res_cnt++;
 
 	curr_time_us = idle_get_current_time_us();
+	curr_predict_us = get_menu_predict_us();
+	curr_timer_us = get_menu_next_timer_us();
 
 	spin_lock_irqsave(&mcdi_cluster_spin_lock, flags);
 
