@@ -412,7 +412,7 @@ GCC_PLUGINS_CFLAGS :=
 TARGET_BUILD_VARIANT := user
 TARGET_PRODUCT := full_oppo6765
 CONFIG_OPPO_FINGERPRINT_PLATFORM := 6765
-oppo6765_19451 := 1
+19451 := 1
 
 
 #ifdef VENDOR_EDIT
@@ -583,7 +583,7 @@ export KBUILD_ARFLAGS
 export TARGET_BUILD_VARIANT
 export TARGET_PRODUCT
 export CONFIG_OPPO_FINGERPRINT_PLATFORM
-export oppo6765_19451
+export 19451
 
 # When compiling out-of-tree modules, put MODVERDIR in the module
 # tree rather than in the kernel tree. The kernel tree might
